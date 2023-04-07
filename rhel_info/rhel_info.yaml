@@ -1,0 +1,7 @@
+---
+- name: Retrieve RHEL Basic Info 
+  hosts: all
+  gather_facts: true
+
+  roles:
+    - rhel-info

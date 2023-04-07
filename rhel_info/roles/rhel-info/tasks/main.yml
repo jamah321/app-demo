@@ -1,0 +1,5 @@
+---
+# tasks file for rhel-info
+
+- name: Retrieve RHEL Basic Info 
+  include_tasks: rhel_info.yaml

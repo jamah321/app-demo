@@ -1,0 +1,10 @@
+---
+
+- name: Retrieve RHEL Version
+  shell: "cat /etc/redhat-release"
+  register: release
+
+
+- name: Display Installed Version
+  debug:
+    msg: "{{ release.stdout_line }}"
