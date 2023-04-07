@@ -5,9 +5,19 @@
   register: release
 
 
-- debug:
-    var: release
+#- debug:
+#    var: release
 
 - name: Display Installed Version
   debug:
-    msg: "{{ release.stdout_line }}"
+    msg: "{{ release.stdout_lines }}"
+
+
+- name: Retrieve RHEL Partitions Usage
+  shell: "df -h"
+  register: df
+
+
+- name: Display Partition Usage Info
+  debug:
+    msg: "{{ df.stdout_lines }}"
