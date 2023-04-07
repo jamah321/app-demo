@@ -1,0 +1,8 @@
+---
+# tasks file for nutanix
+
+- name: Nutanix Credential
+  include_vars: nutanix_credential.yaml
+
+- name: Retrieve VM List
+  include_tasks: vm_list.yaml

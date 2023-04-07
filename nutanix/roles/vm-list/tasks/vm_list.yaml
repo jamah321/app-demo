@@ -1,0 +1,26 @@
+
+
+- name: List VMS using length, offset, sort order and vm_name sort attribute
+  ntnx_vms_info:
+    nutanix_host: "{{ ip }}"
+    nutanix_username: "{{ username }}"
+    nutanix_password: "{{ password }}"
+    validate_certs: False
+    length: 100
+#        offset: 50
+    sort_order: "ASCENDING"
+    sort_attribute: "vm_name"
+  register: result
+
+#    - debug:
+#        var: result
+
+
+- set_fact:
+    vm_list: "{{ result | json_query(\"response.entities[*].spec.name\") }}"
+
+
+- name: Print VM List
+  debug:
+    msg: "{{ vm_list }}"
+

@@ -1,0 +1,7 @@
+---
+- name: Retrieve VM list
+  hosts: all
+  gather_facts: true
+
+  roles:
+    - vm-list
