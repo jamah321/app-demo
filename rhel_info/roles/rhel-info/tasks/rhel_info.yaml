@@ -5,6 +5,9 @@
   register: release
 
 
+- debug:
+    var: release
+
 - name: Display Installed Version
   debug:
     msg: "{{ release.stdout_line }}"
