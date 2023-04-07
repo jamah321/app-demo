@@ -2,6 +2,8 @@
 - name: Retrieve VM list
   hosts: all
   gather_facts: true
+  collections:
+    - nutanix.ncp
 
   roles:
     - vm-list
